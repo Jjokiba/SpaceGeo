@@ -1,0 +1,10 @@
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.exe.config
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.exe
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.pdb
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csproj.AssemblyReference.cache
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.Properties.Resources.resources
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csproj.GenerateResource.cache
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csproj.CoreCompileInputs.cache
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.exe
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.pdb
+D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.Forms.frmPrincipal.resources
