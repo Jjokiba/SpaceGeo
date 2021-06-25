@@ -8,3 +8,6 @@ D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeo
 D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.exe
 D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.pdb
 D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.Forms.frmPrincipal.resources
+C:\Users\jujub\OneDrive\Área de Trabalho\Piriquito\Faculdade\5ºSem\eletiva 1\pipipopopopupupu\GeometricCalculator\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.exe.config
+C:\Users\jujub\OneDrive\Área de Trabalho\Piriquito\Faculdade\5ºSem\eletiva 1\pipipopopopupupu\GeometricCalculator\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.exe
+C:\Users\jujub\OneDrive\Área de Trabalho\Piriquito\Faculdade\5ºSem\eletiva 1\pipipopopopupupu\GeometricCalculator\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.pdb
