@@ -34,7 +34,6 @@ namespace CalculadoraGeometrica.Forms
             this.cmbForma = new System.Windows.Forms.ComboBox();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.Hiacaco = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +50,7 @@ namespace CalculadoraGeometrica.Forms
             // picImage
             // 
             this.picImage.Location = new System.Drawing.Point(9, 68);
-            this.picImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picImage.Margin = new System.Windows.Forms.Padding(2);
             this.picImage.Name = "picImage";
             this.picImage.Size = new System.Drawing.Size(261, 201);
             this.picImage.TabIndex = 2;
@@ -61,7 +60,7 @@ namespace CalculadoraGeometrica.Forms
             // 
             this.cmbForma.FormattingEnabled = true;
             this.cmbForma.Location = new System.Drawing.Point(87, 274);
-            this.cmbForma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbForma.Margin = new System.Windows.Forms.Padding(2);
             this.cmbForma.Name = "cmbForma";
             this.cmbForma.Size = new System.Drawing.Size(92, 21);
             this.cmbForma.TabIndex = 4;
@@ -69,7 +68,7 @@ namespace CalculadoraGeometrica.Forms
             // btnSelecionar
             // 
             this.btnSelecionar.Location = new System.Drawing.Point(87, 309);
-            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(91, 32);
             this.btnSelecionar.TabIndex = 5;
@@ -79,34 +78,24 @@ namespace CalculadoraGeometrica.Forms
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(87, 345);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(91, 46);
             this.btnAdicionar.TabIndex = 6;
             this.btnAdicionar.Text = "Adicionar Nova Formula";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
-            // Hiacaco
-            // 
-            this.Hiacaco.AutoSize = true;
-            this.Hiacaco.Location = new System.Drawing.Point(108, 155);
-            this.Hiacaco.Name = "Hiacaco";
-            this.Hiacaco.Size = new System.Drawing.Size(47, 13);
-            this.Hiacaco.TabIndex = 7;
-            this.Hiacaco.Text = "Hiacaco";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(279, 414);
-            this.Controls.Add(this.Hiacaco);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.cmbForma);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPrincipal";
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
@@ -122,6 +111,5 @@ namespace CalculadoraGeometrica.Forms
         private System.Windows.Forms.ComboBox cmbForma;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.Label Hiacaco;
     }
 }
