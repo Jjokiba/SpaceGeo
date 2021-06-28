@@ -34,6 +34,7 @@ namespace CalculadoraGeometrica.Forms
             this.cmbForma = new System.Windows.Forms.ComboBox();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.Hiacaco = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,11 +86,24 @@ namespace CalculadoraGeometrica.Forms
             this.btnAdicionar.Text = "Adicionar Nova Formula";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
+            // Hiacaco
+            // 
+            this.Hiacaco.AutoSize = true;
+            this.Hiacaco.Location = new System.Drawing.Point(108, 155);
+            this.Hiacaco.Name = "Hiacaco";
+            this.Hiacaco.Size = new System.Drawing.Size(47, 13);
+            this.Hiacaco.TabIndex = 7;
+            this.Hiacaco.Text = "Hiacaco";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(279, 414);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.Hiacaco);
+>>>>>>> c68ab875de01acc2bbb07c730272eca505272f55
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.cmbForma);
@@ -112,5 +126,6 @@ namespace CalculadoraGeometrica.Forms
         private System.Windows.Forms.ComboBox cmbForma;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Label Hiacaco;
     }
 }
