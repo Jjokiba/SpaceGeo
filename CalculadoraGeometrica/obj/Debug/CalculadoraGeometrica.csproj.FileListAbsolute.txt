@@ -11,3 +11,6 @@ D:\Projects\CalculadoraGeometrica\CalculadoraGeometrica\obj\Debug\CalculadoraGeo
 C:\Users\jujub\OneDrive\Área de Trabalho\Piriquito\Faculdade\5ºSem\eletiva 1\pipipopopopupupu\GeometricCalculator\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.exe.config
 C:\Users\jujub\OneDrive\Área de Trabalho\Piriquito\Faculdade\5ºSem\eletiva 1\pipipopopopupupu\GeometricCalculator\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.exe
 C:\Users\jujub\OneDrive\Área de Trabalho\Piriquito\Faculdade\5ºSem\eletiva 1\pipipopopopupupu\GeometricCalculator\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.pdb
+C:\Users\User\Desktop\IF EAD\eletiva\GITHUB\SpaceGeo\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.exe.config
+C:\Users\User\Desktop\IF EAD\eletiva\GITHUB\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.exe
+C:\Users\User\Desktop\IF EAD\eletiva\GITHUB\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.pdb
