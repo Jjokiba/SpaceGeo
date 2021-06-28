@@ -8,5 +8,6 @@ namespace CalculadoraGeometrica.Classes
 {
     class connectionClass
     {
+        //fazer conexão
     }
 }
