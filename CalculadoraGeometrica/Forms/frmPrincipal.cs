@@ -16,6 +16,6 @@ namespace CalculadoraGeometrica.Forms
         {
             InitializeComponent();
         }
-
+        //Dandy
     }
 }
