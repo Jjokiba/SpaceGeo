@@ -1,10 +1,9 @@
-START TRANSACTION;
 
 --
--- Database: `contatos`
+-- Database: `SpaceGeo`
 --
 CREATE DATABASE `SpaceGeo`
-USE DATABASE `SpaceGeo`
+USE `SpaceGeo`
 -- --------------------------------------------------------
 
 --
@@ -20,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `tb_forma` (
 );
 
 --
--- Inserindo dados da tabela `contato`
+-- Inserindo dados da tabela `tb_forma`
 --
 
 INSERT INTO `tb_forma` (`nome_forma`) VALUES
@@ -77,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `tb_variavel` (
 -- Inserindo dados da tabela `tb_variavel`
 --
 
-INSERT INTO `tb_variavel` (`char_variavel`, `id_formula`) VALUES
+INSERT INTO `tb_variavel` (`char_variavel`, `id_forma`) VALUES
 ('X', 1),
 ('A', 2),
 ('B', 2),
@@ -87,4 +86,3 @@ INSERT INTO `tb_variavel` (`char_variavel`, `id_formula`) VALUES
 ('H', 3),
 ('Ï€', 4),
 ('R', 4);
-COMMIT;
