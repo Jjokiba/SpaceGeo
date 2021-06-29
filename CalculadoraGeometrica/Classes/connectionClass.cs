@@ -12,7 +12,6 @@ namespace CalculadoraGeometrica.Classes
     class connectionClass
     {
         string ds_erro;
-        public string ipServer, portServer, nameDb, loginServer, senhaServer;
 
         public MySqlConnection instancia_conexao = new MySqlConnection();
 
