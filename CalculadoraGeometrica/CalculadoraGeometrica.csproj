@@ -89,6 +89,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\clsForma.cs" />
+    <Compile Include="Classes\clsFormula.cs" />
+    <Compile Include="Classes\clsVariavel.cs" />
     <Compile Include="Classes\connectionClass.cs" />
     <Compile Include="Forms\frmAdicionar.cs">
       <SubType>Form</SubType>

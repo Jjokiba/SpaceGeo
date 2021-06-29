@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using CalculadoraGeometrica.Classes;
 
 namespace CalculadoraGeometrica.Forms
 {
@@ -15,6 +17,17 @@ namespace CalculadoraGeometrica.Forms
         public frmCalcular()
         {
             InitializeComponent();
+            CarregaFormas();
+        }
+
+        public void CarregaFormas()
+        {
+            clsForma objForma = new clsForma();
+            MySqlDataReader sql_dr = objForma.GetAllFormas();
+            while (sql_dr.Read())
+            {
+                cmbNomeForma.Items.Add(sql_dr["nome_forma"].ToString());
+            }
         }
     }
 }
