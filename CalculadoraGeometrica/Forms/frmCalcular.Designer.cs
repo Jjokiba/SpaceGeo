@@ -40,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblFormulaComNum = new System.Windows.Forms.Label();
             this.lblFormula = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,9 +63,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbFormula);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(314, 125);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -75,7 +75,7 @@
             // 
             this.cmbNomeForma.FormattingEnabled = true;
             this.cmbNomeForma.Location = new System.Drawing.Point(15, 45);
-            this.cmbNomeForma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbNomeForma.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNomeForma.Name = "cmbNomeForma";
             this.cmbNomeForma.Size = new System.Drawing.Size(176, 21);
             this.cmbNomeForma.TabIndex = 4;
@@ -83,7 +83,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(214, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(95, 103);
             this.pictureBox1.TabIndex = 15;
@@ -113,7 +113,7 @@
             // 
             this.cmbFormula.FormattingEnabled = true;
             this.cmbFormula.Location = new System.Drawing.Point(15, 90);
-            this.cmbFormula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbFormula.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFormula.Name = "cmbFormula";
             this.cmbFormula.Size = new System.Drawing.Size(176, 21);
             this.cmbFormula.TabIndex = 4;
@@ -125,7 +125,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblFormulaComNum);
             this.groupBox2.Controls.Add(this.lblFormula);
-            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.btnVoltar);
             this.groupBox2.Controls.Add(this.btnCalcular);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
@@ -136,9 +136,9 @@
             this.groupBox2.Controls.Add(this.txtVar1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(9, 140);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(542, 249);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
@@ -147,7 +147,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(377, 206);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 38);
             this.button1.TabIndex = 23;
@@ -197,20 +197,21 @@
             this.lblFormula.TabIndex = 19;
             this.lblFormula.Text = "(X*X^2+23)/32";
             // 
-            // button5
+            // btnVoltar
             // 
-            this.button5.Location = new System.Drawing.Point(4, 206);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 38);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "< Voltar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnVoltar.Location = new System.Drawing.Point(4, 206);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 38);
+            this.btnVoltar.TabIndex = 18;
+            this.btnVoltar.Text = "< Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnCalcular
             // 
             this.btnCalcular.Location = new System.Drawing.Point(457, 206);
-            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 38);
             this.btnCalcular.TabIndex = 17;
@@ -260,7 +261,7 @@
             // txtVar3
             // 
             this.txtVar3.Location = new System.Drawing.Point(15, 115);
-            this.txtVar3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVar3.Margin = new System.Windows.Forms.Padding(2);
             this.txtVar3.Name = "txtVar3";
             this.txtVar3.Size = new System.Drawing.Size(176, 20);
             this.txtVar3.TabIndex = 3;
@@ -268,7 +269,7 @@
             // txtVar2
             // 
             this.txtVar2.Location = new System.Drawing.Point(15, 78);
-            this.txtVar2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVar2.Margin = new System.Windows.Forms.Padding(2);
             this.txtVar2.Name = "txtVar2";
             this.txtVar2.Size = new System.Drawing.Size(176, 20);
             this.txtVar2.TabIndex = 2;
@@ -276,7 +277,7 @@
             // txtVar1
             // 
             this.txtVar1.Location = new System.Drawing.Point(15, 41);
-            this.txtVar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVar1.Margin = new System.Windows.Forms.Padding(2);
             this.txtVar1.Name = "txtVar1";
             this.txtVar1.Size = new System.Drawing.Size(176, 20);
             this.txtVar1.TabIndex = 1;
@@ -298,10 +299,11 @@
             this.ClientSize = new System.Drawing.Size(559, 399);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCalcular";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCalcular";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCalcular_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -318,7 +320,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

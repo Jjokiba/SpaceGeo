@@ -30,8 +30,9 @@ namespace CalculadoraGeometrica.Forms
             txtNomeForma.Text = "";
             cmbNomeForma.Enabled = false;
             rdbNao.Checked = true;
-            cmbNumVar.SelectedItem = "";
+            cmbNumVar.SelectedItem = null;
             txtVar1.Text = "";
+            txtVar1.Enabled = false;
             txtVar2.Text = "";
             txtVar2.Enabled = false;
             txtVar3.Text = "";
@@ -43,6 +44,8 @@ namespace CalculadoraGeometrica.Forms
             btnVar2.Enabled = false;
             btnVar3.Text = "";
             btnVar3.Enabled = false;
+            cmbFormulas.SelectedItem = null;
+            cmbNomeForma.SelectedItem = null;
         }
 
         public void CarregaFormas()
@@ -58,7 +61,8 @@ namespace CalculadoraGeometrica.Forms
         public void validarCampos()
         {
             if (txtNomeForma.Text == "" || txtVar1.Text == "" ||
-                txtFormula.Text == "")
+                txtFormula.Text == "" || cmbFormulas.SelectedItem != null ||
+                cmbNumVar.SelectedItem != null)
             {
                 validação = false;
             }
@@ -222,6 +226,34 @@ namespace CalculadoraGeometrica.Forms
             else
             {
                 e.Handled = true;
+            }
+        }
+
+        private void validarTxt(object sender, EventArgs e)
+        {
+            if(cmbNumVar.SelectedItem.ToString() == "1") {
+                txtVar1.Enabled = true;
+                txtVar2.Enabled = false;
+                txtVar2.Text = "";
+                btnVar2.Text = "";
+                btnVar2.Enabled = false;
+                txtVar3.Enabled = false;
+                btnVar3.Text = "";
+                btnVar3.Enabled = false;
+            }
+            else if (cmbNumVar.SelectedItem.ToString() == "2") {
+                txtVar1.Enabled = true;
+                txtVar2.Enabled = true;
+                txtVar3.Text = "";
+                txtVar3.Enabled = false;
+                btnVar3.Text = "";
+                btnVar3.Enabled = false;
+            }
+            else if (cmbNumVar.SelectedItem.ToString() == "3")
+            {
+                txtVar1.Enabled = true;
+                txtVar2.Enabled = true;
+                txtVar3.Enabled = true;
             }
         }
 

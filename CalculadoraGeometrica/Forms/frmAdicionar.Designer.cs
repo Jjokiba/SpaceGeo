@@ -251,6 +251,9 @@
             // cmbFormulas
             // 
             this.cmbFormulas.FormattingEnabled = true;
+            this.cmbFormulas.Items.AddRange(new object[] {
+            "Area total",
+            "Volume"});
             this.cmbFormulas.Location = new System.Drawing.Point(273, 49);
             this.cmbFormulas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFormulas.Name = "cmbFormulas";
@@ -266,6 +269,7 @@
             this.btnVoltar.TabIndex = 18;
             this.btnVoltar.Text = "< Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnInserirFormula
             // 
@@ -413,11 +417,16 @@
             // cmbNumVar
             // 
             this.cmbNumVar.FormattingEnabled = true;
+            this.cmbNumVar.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.cmbNumVar.Location = new System.Drawing.Point(15, 49);
             this.cmbNumVar.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNumVar.Name = "cmbNumVar";
             this.cmbNumVar.Size = new System.Drawing.Size(176, 21);
             this.cmbNumVar.TabIndex = 4;
+            this.cmbNumVar.Leave += new System.EventHandler(this.validarTxt);
             // 
             // txtVar3
             // 
