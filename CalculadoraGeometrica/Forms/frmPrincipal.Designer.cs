@@ -74,6 +74,7 @@ namespace CalculadoraGeometrica.Forms
             this.btnSelecionar.TabIndex = 5;
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // btnAdicionar
             // 
@@ -84,6 +85,7 @@ namespace CalculadoraGeometrica.Forms
             this.btnAdicionar.TabIndex = 6;
             this.btnAdicionar.Text = "Adicionar Nova Formula";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // frmPrincipal
             // 

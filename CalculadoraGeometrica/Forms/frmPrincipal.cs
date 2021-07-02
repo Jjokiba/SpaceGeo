@@ -29,5 +29,23 @@ namespace CalculadoraGeometrica.Forms
                 cmbForma.Items.Add(sql_dr["nome_forma"].ToString());
             }
         }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            frmCalcular calcular = new frmCalcular();
+            calcular.refFormInicial = this;
+
+            this.Hide();
+            calcular.Show();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            frmAdicionar adicionar = new frmAdicionar();
+            adicionar.refFormInicial = this;
+
+            this.Hide();
+            adicionar.Show();
+        }
     }
 }

@@ -20,6 +20,8 @@ namespace CalculadoraGeometrica.Forms
             CarregaFormas();
         }
 
+        public frmPrincipal refFormInicial { get; set; }
+
         public void CarregaFormas()
         {
             clsForma objForma = new clsForma();
