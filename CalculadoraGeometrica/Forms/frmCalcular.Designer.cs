@@ -73,6 +73,7 @@
             // 
             // cmbNomeForma
             // 
+            this.cmbNomeForma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomeForma.FormattingEnabled = true;
             this.cmbNomeForma.Location = new System.Drawing.Point(15, 45);
             this.cmbNomeForma.Margin = new System.Windows.Forms.Padding(2);
@@ -111,6 +112,7 @@
             // 
             // cmbFormula
             // 
+            this.cmbFormula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormula.FormattingEnabled = true;
             this.cmbFormula.Location = new System.Drawing.Point(15, 90);
             this.cmbFormula.Margin = new System.Windows.Forms.Padding(2);
@@ -300,6 +302,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(575, 438);
+            this.MinimumSize = new System.Drawing.Size(575, 438);
             this.Name = "frmCalcular";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCalcular";

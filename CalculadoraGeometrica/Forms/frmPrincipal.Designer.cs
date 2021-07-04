@@ -58,6 +58,7 @@ namespace CalculadoraGeometrica.Forms
             // 
             // cmbForma
             // 
+            this.cmbForma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbForma.FormattingEnabled = true;
             this.cmbForma.Location = new System.Drawing.Point(87, 274);
             this.cmbForma.Margin = new System.Windows.Forms.Padding(2);
@@ -98,6 +99,9 @@ namespace CalculadoraGeometrica.Forms
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(295, 453);
+            this.MinimumSize = new System.Drawing.Size(295, 453);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

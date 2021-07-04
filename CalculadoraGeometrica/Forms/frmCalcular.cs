@@ -14,10 +14,12 @@ namespace CalculadoraGeometrica.Forms
 {
     public partial class frmCalcular : Form
     {
-        public frmCalcular()
+        public frmCalcular(int idForma)
         {
             InitializeComponent();
             CarregaFormas();
+            cmbNomeForma.SelectedIndex = cmbNomeForma.FindString(idForma.ToString() + " - ");
+            CarregarFormulas(idForma);
         }
 
         public frmPrincipal refFormInicial { get; set; }
@@ -28,7 +30,17 @@ namespace CalculadoraGeometrica.Forms
             MySqlDataReader sql_dr = objForma.GetAllFormas();
             while (sql_dr.Read())
             {
-                cmbNomeForma.Items.Add(sql_dr["nome_forma"].ToString());
+                cmbNomeForma.Items.Add(sql_dr["id_forma"].ToString() + " - " + sql_dr["nome_forma"].ToString());
+            }
+        }
+
+        public void CarregarFormulas(int id)
+        {
+            clsFormula objFormula = new clsFormula();
+            MySqlDataReader sql_dr = objFormula.GetFormulasByIdForma(id);
+            while (sql_dr.Read())
+            {
+                cmbFormula.Items.Add(sql_dr["id_formula"].ToString() + " - " + sql_dr["nome_formula"].ToString());
             }
         }
 

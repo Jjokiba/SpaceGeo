@@ -100,6 +100,7 @@
             // 
             // cmbNomeForma
             // 
+            this.cmbNomeForma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomeForma.FormattingEnabled = true;
             this.cmbNomeForma.Location = new System.Drawing.Point(15, 70);
             this.cmbNomeForma.Margin = new System.Windows.Forms.Padding(2);
@@ -250,6 +251,7 @@
             // 
             // cmbFormulas
             // 
+            this.cmbFormulas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormulas.FormattingEnabled = true;
             this.cmbFormulas.Items.AddRange(new object[] {
             "Area total",
@@ -477,6 +479,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(580, 461);
+            this.MinimumSize = new System.Drawing.Size(580, 461);
             this.Name = "frmAdicionar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdicionar";
