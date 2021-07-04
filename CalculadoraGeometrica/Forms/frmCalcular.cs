@@ -54,5 +54,66 @@ namespace CalculadoraGeometrica.Forms
         {
             refFormInicial.Close();
         }
+
+        private void CarregaLbl(object sender, EventArgs e)
+        {
+            clsFormula objFormula = new clsFormula();
+            MySqlDataReader sql_dr = objFormula.GetFormulaById(Convert.ToInt32(cmbFormula.SelectedItem.ToString().Split('-')[0].Trim()));
+            if (sql_dr.Read())
+            {
+                lblFormula.Text = sql_dr["formula"].ToString();
+
+                if (lblFormula.Text.Contains("A"))
+                {
+                    txtVarA.Visible = true;
+                    lblA.Visible = true;
+                }
+                else
+                {
+                    txtVarA.Visible = false;
+                    lblA.Visible = false;
+                }
+                if (lblFormula.Text.Contains("B"))
+                {
+                    txtVarB.Visible = true;
+                    lblB.Visible = true;
+                }
+                else
+                {
+                    txtVarB.Visible = false;
+                    lblB.Visible = false;
+                }
+                if (lblFormula.Text.Contains("C"))
+                {
+                    txtVarC.Visible = true;
+                    lblC.Visible = true;
+                }
+                else
+                {
+                    txtVarC.Visible = false;
+                    lblC.Visible = false;
+                }
+                if (lblFormula.Text.Contains("D"))
+                {
+                    txtVarD.Visible = true;
+                    lblD.Visible = true;
+                }
+                else
+                {
+                    txtVarD.Visible = false;
+                    lblD.Visible = false;
+                }
+                if (lblFormula.Text.Contains("E"))
+                {
+                    txtVarE.Visible = true;
+                    lblE.Visible = true;
+                }
+                else
+                {
+                    txtVarE.Visible = false;
+                    lblE.Visible = false;
+                }
+            }
+        }
     }
 }
