@@ -32,6 +32,7 @@ namespace CalculadoraGeometrica.Forms
             {
                 cmbNomeForma.Items.Add(sql_dr["id_forma"].ToString() + " - " + sql_dr["nome_forma"].ToString());
             }
+            sql_dr.Close();
         }
 
         public void CarregarFormulas(int id)
@@ -42,6 +43,7 @@ namespace CalculadoraGeometrica.Forms
             {
                 cmbFormula.Items.Add(sql_dr["id_formula"].ToString() + " - " + sql_dr["nome_formula"].ToString());
             }
+            sql_dr.Close();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -114,6 +116,7 @@ namespace CalculadoraGeometrica.Forms
                     lblE.Visible = false;
                 }
             }
+            sql_dr.Close();
         }
     }
 }

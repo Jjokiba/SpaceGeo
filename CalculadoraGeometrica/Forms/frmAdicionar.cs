@@ -56,6 +56,7 @@ namespace CalculadoraGeometrica.Forms
             {
                 cmbNomeForma.Items.Add(sql_dr["nome_forma"].ToString());
             }
+            sql_dr.Close();
         }
 
         public void validarCampos()

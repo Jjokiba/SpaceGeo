@@ -29,6 +29,7 @@ namespace CalculadoraGeometrica.Forms
             {
                 cmbForma.Items.Add(sql_dr["id_forma"].ToString() + " - " + sql_dr["nome_forma"].ToString());
             }
+            sql_dr.Close();
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
