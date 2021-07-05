@@ -45,7 +45,7 @@ namespace CalculadoraGeometrica.Classes
             }
             catch (Exception e)
             {
-                MessageBox.Show("Comando inválido! Contate o suporte.\nVerifique as configuração de conexão e tente novamente.\n" + e, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Comando inválido! Contate o suporte.\nVerifique as configuração de conexão e tente novamente.\n" + e.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //SELECT
@@ -54,6 +54,7 @@ namespace CalculadoraGeometrica.Classes
             conectar();
             sql_cmd.Connection = instancia_conexao;
             MySqlDataReader sql_dr = sql_cmd.ExecuteReader();
+            desconectar();
             return sql_dr;
         }
     }

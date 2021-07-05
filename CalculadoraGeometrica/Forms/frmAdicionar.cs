@@ -27,7 +27,7 @@ namespace CalculadoraGeometrica.Forms
 
         public void inicializar()
         {
-            txtNomeForma.Text = "";
+            txtNomeNovaForma.Text = "";
             cmbNomeForma.Enabled = false;
             rdbNao.Checked = true;
             cmbNumVar.SelectedItem = null;
@@ -60,7 +60,7 @@ namespace CalculadoraGeometrica.Forms
 
         public void validarCampos()
         {
-            if (txtNomeForma.Text == "" || txtVar1.Text == "" ||
+            if (txtNomeNovaForma.Text == "" || txtVar1.Text == "" ||
                 txtFormula.Text == "" || cmbFormulas.SelectedItem != null ||
                 cmbNumVar.SelectedItem != null)
             {
@@ -196,6 +196,7 @@ namespace CalculadoraGeometrica.Forms
                 {
                     if (liberado)
                     {
+                        
                         MessageBox.Show("Cadastrado com sucesso");
                         inicializar();
                     }
@@ -211,9 +212,9 @@ namespace CalculadoraGeometrica.Forms
                     MessageBox.Show("Erro, preencha os campos corretamente");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Erro fatal");
+                MessageBox.Show("Erro fatal\n" + ex.Message);
             }
         }
 
@@ -256,6 +257,27 @@ namespace CalculadoraGeometrica.Forms
                 txtVar3.Enabled = true;
             }
         }
+
+        private void rbSimNaoNomeFormula(object sender, EventArgs e)
+        {
+            if (rdbNao.Checked)
+            {
+                txtNomeNovaForma.Enabled = true;
+                cmbNomeForma.Enabled = false;
+            }
+            else
+            {
+                txtNomeNovaForma.Enabled = false;
+                cmbNomeForma.Enabled = true;
+            }
+        }
+
+        private void vardois(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+
 
     }
 }

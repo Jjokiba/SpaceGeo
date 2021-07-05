@@ -8,6 +8,7 @@ using System.Data;
 
 namespace CalculadoraGeometrica.Classes
 {
+
     class clsFormula
     {
         public MySqlDataReader GetAllFormulas()
