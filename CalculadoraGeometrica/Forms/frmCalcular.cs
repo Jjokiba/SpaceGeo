@@ -65,7 +65,7 @@ namespace CalculadoraGeometrica.Forms
             {
                 lblFormula.Text = sql_dr["formula"].ToString();
 
-                if (lblFormula.Text.Contains("A"))
+                /*if (lblFormula.Text.Contains("A"))
                 {
                     txtVarA.Visible = true;
                     lblA.Visible = true;
@@ -114,7 +114,7 @@ namespace CalculadoraGeometrica.Forms
                 {
                     txtVarE.Visible = false;
                     lblE.Visible = false;
-                }
+                }*/
             }
             sql_dr.Close();
         }
