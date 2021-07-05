@@ -24,6 +24,7 @@ namespace CalculadoraGeometrica.Forms
         {
             clsForma objForma = new clsForma();
             MySqlDataReader sql_dr = objForma.GetAllFormas();
+
             while (sql_dr.Read())
             {
                 cmbForma.Items.Add(sql_dr["id_forma"].ToString() + " - " + sql_dr["nome_forma"].ToString());

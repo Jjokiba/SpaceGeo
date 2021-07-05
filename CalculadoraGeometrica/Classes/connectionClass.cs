@@ -54,7 +54,7 @@ namespace CalculadoraGeometrica.Classes
             conectar();
             sql_cmd.Connection = instancia_conexao;
             MySqlDataReader sql_dr = sql_cmd.ExecuteReader();
-            desconectar();
+            //desconectar();
             return sql_dr;
         }
     }
