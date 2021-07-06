@@ -85,6 +85,7 @@ namespace CalculadoraGeometrica.Forms
                     ch[i] = lblFormula.Text[i];
                 }
 
+                ch2 = new char[3];
                 int quantasVar = 0; // número de variáveis na fórmula
                 foreach (char c in ch)
                 {
