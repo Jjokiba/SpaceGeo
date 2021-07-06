@@ -35,12 +35,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbFormula = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblE = new System.Windows.Forms.Label();
-            this.txtVarE = new System.Windows.Forms.TextBox();
-            this.lblD = new System.Windows.Forms.Label();
-            this.txtVarD = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblCalculo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFormulaComNum = new System.Windows.Forms.Label();
             this.lblFormula = new System.Windows.Forms.Label();
@@ -48,12 +44,12 @@
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblC = new System.Windows.Forms.Label();
-            this.lblB = new System.Windows.Forms.Label();
-            this.txtVarC = new System.Windows.Forms.TextBox();
-            this.txtVarB = new System.Windows.Forms.TextBox();
-            this.txtVarA = new System.Windows.Forms.TextBox();
-            this.lblA = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.txtVar3 = new System.Windows.Forms.TextBox();
+            this.txtVar2 = new System.Windows.Forms.TextBox();
+            this.txtVar1 = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -70,7 +66,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(314, 125);
+            this.groupBox1.Size = new System.Drawing.Size(542, 125);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma";
@@ -84,10 +80,11 @@
             this.cmbNomeForma.Name = "cmbNomeForma";
             this.cmbNomeForma.Size = new System.Drawing.Size(176, 21);
             this.cmbNomeForma.TabIndex = 4;
+            this.cmbNomeForma.SelectedIndexChanged += new System.EventHandler(this.CarregarFormulas);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(214, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(437, 17);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(95, 103);
@@ -127,12 +124,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblE);
-            this.groupBox2.Controls.Add(this.txtVarE);
-            this.groupBox2.Controls.Add(this.lblD);
-            this.groupBox2.Controls.Add(this.txtVarD);
+            this.groupBox2.Controls.Add(this.lbl3);
+            this.groupBox2.Controls.Add(this.lbl2);
+            this.groupBox2.Controls.Add(this.txtVar3);
+            this.groupBox2.Controls.Add(this.txtVar2);
+            this.groupBox2.Controls.Add(this.txtVar1);
+            this.groupBox2.Controls.Add(this.lbl1);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.lblCalculo);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblFormulaComNum);
             this.groupBox2.Controls.Add(this.lblFormula);
@@ -140,12 +139,6 @@
             this.groupBox2.Controls.Add(this.btnCalcular);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.lblC);
-            this.groupBox2.Controls.Add(this.lblB);
-            this.groupBox2.Controls.Add(this.txtVarC);
-            this.groupBox2.Controls.Add(this.txtVarB);
-            this.groupBox2.Controls.Add(this.txtVarA);
-            this.groupBox2.Controls.Add(this.lblA);
             this.groupBox2.Location = new System.Drawing.Point(9, 140);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -154,46 +147,6 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Formula";
-            // 
-            // lblE
-            // 
-            this.lblE.AutoSize = true;
-            this.lblE.Location = new System.Drawing.Point(13, 167);
-            this.lblE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblE.Name = "lblE";
-            this.lblE.Size = new System.Drawing.Size(112, 13);
-            this.lblE.TabIndex = 27;
-            this.lblE.Text = "Numero da variavel E:";
-            this.lblE.Visible = false;
-            // 
-            // txtVarE
-            // 
-            this.txtVarE.Location = new System.Drawing.Point(15, 182);
-            this.txtVarE.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVarE.Name = "txtVarE";
-            this.txtVarE.Size = new System.Drawing.Size(176, 20);
-            this.txtVarE.TabIndex = 26;
-            this.txtVarE.Visible = false;
-            // 
-            // lblD
-            // 
-            this.lblD.AutoSize = true;
-            this.lblD.Location = new System.Drawing.Point(13, 131);
-            this.lblD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblD.Name = "lblD";
-            this.lblD.Size = new System.Drawing.Size(113, 13);
-            this.lblD.TabIndex = 25;
-            this.lblD.Text = "Numero da variavel D:";
-            this.lblD.Visible = false;
-            // 
-            // txtVarD
-            // 
-            this.txtVarD.Location = new System.Drawing.Point(15, 146);
-            this.txtVarD.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVarD.Name = "txtVarD";
-            this.txtVarD.Size = new System.Drawing.Size(176, 20);
-            this.txtVarD.TabIndex = 24;
-            this.txtVarD.Visible = false;
             // 
             // button1
             // 
@@ -205,16 +158,16 @@
             this.button1.Text = "Editar Formula(*)";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // lblCalculo
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(277, 176);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 24);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Calcule";
+            this.lblCalculo.AutoSize = true;
+            this.lblCalculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalculo.Location = new System.Drawing.Point(277, 176);
+            this.lblCalculo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCalculo.Name = "lblCalculo";
+            this.lblCalculo.Size = new System.Drawing.Size(80, 24);
+            this.lblCalculo.TabIndex = 22;
+            this.lblCalculo.Text = "Calcule";
             // 
             // label1
             // 
@@ -289,65 +242,65 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Formula:";
             // 
-            // lblC
+            // lbl3
             // 
-            this.lblC.AutoSize = true;
-            this.lblC.Location = new System.Drawing.Point(13, 92);
-            this.lblC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(112, 13);
-            this.lblC.TabIndex = 7;
-            this.lblC.Text = "Numero da variavel C:";
-            this.lblC.Visible = false;
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(4, 102);
+            this.lbl3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(111, 13);
+            this.lbl3.TabIndex = 29;
+            this.lbl3.Text = "Numero da variavel 3:";
+            this.lbl3.Visible = false;
             // 
-            // lblB
+            // lbl2
             // 
-            this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(13, 53);
-            this.lblB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(112, 13);
-            this.lblB.TabIndex = 6;
-            this.lblB.Text = "Numero da variavel B:";
-            this.lblB.Visible = false;
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(4, 63);
+            this.lbl2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(111, 13);
+            this.lbl2.TabIndex = 28;
+            this.lbl2.Text = "Numero da variavel 2:";
+            this.lbl2.Visible = false;
             // 
-            // txtVarC
+            // txtVar3
             // 
-            this.txtVarC.Location = new System.Drawing.Point(15, 109);
-            this.txtVarC.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVarC.Name = "txtVarC";
-            this.txtVarC.Size = new System.Drawing.Size(176, 20);
-            this.txtVarC.TabIndex = 3;
-            this.txtVarC.Visible = false;
+            this.txtVar3.Location = new System.Drawing.Point(6, 119);
+            this.txtVar3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtVar3.Name = "txtVar3";
+            this.txtVar3.Size = new System.Drawing.Size(176, 20);
+            this.txtVar3.TabIndex = 27;
+            this.txtVar3.Visible = false;
             // 
-            // txtVarB
+            // txtVar2
             // 
-            this.txtVarB.Location = new System.Drawing.Point(15, 69);
-            this.txtVarB.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVarB.Name = "txtVarB";
-            this.txtVarB.Size = new System.Drawing.Size(176, 20);
-            this.txtVarB.TabIndex = 2;
-            this.txtVarB.Visible = false;
+            this.txtVar2.Location = new System.Drawing.Point(6, 79);
+            this.txtVar2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtVar2.Name = "txtVar2";
+            this.txtVar2.Size = new System.Drawing.Size(176, 20);
+            this.txtVar2.TabIndex = 26;
+            this.txtVar2.Visible = false;
             // 
-            // txtVarA
+            // txtVar1
             // 
-            this.txtVarA.Location = new System.Drawing.Point(15, 31);
-            this.txtVarA.Margin = new System.Windows.Forms.Padding(2);
-            this.txtVarA.Name = "txtVarA";
-            this.txtVarA.Size = new System.Drawing.Size(176, 20);
-            this.txtVarA.TabIndex = 1;
-            this.txtVarA.Visible = false;
+            this.txtVar1.Location = new System.Drawing.Point(6, 41);
+            this.txtVar1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtVar1.Name = "txtVar1";
+            this.txtVar1.Size = new System.Drawing.Size(176, 20);
+            this.txtVar1.TabIndex = 25;
+            this.txtVar1.Visible = false;
             // 
-            // lblA
+            // lbl1
             // 
-            this.lblA.AutoSize = true;
-            this.lblA.Location = new System.Drawing.Point(13, 15);
-            this.lblA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(112, 13);
-            this.lblA.TabIndex = 0;
-            this.lblA.Text = "Numero da variavel A:";
-            this.lblA.Visible = false;
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(4, 25);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(111, 13);
+            this.lbl1.TabIndex = 24;
+            this.lbl1.Text = "Numero da variavel 1:";
+            this.lbl1.Visible = false;
             // 
             // frmCalcular
             // 
@@ -384,22 +337,18 @@
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbFormula;
-        private System.Windows.Forms.TextBox txtVarB;
-        private System.Windows.Forms.TextBox txtVarA;
-        private System.Windows.Forms.Label lblA;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblCalculo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFormulaComNum;
         private System.Windows.Forms.Label lblFormula;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblD;
-        private System.Windows.Forms.TextBox txtVarD;
-        private System.Windows.Forms.Label lblC;
-        private System.Windows.Forms.TextBox txtVarC;
-        private System.Windows.Forms.Label lblE;
-        private System.Windows.Forms.TextBox txtVarE;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.TextBox txtVar3;
+        private System.Windows.Forms.TextBox txtVar2;
+        private System.Windows.Forms.TextBox txtVar1;
+        private System.Windows.Forms.Label lbl1;
     }
 }

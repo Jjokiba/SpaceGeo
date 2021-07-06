@@ -14,15 +14,32 @@ namespace CalculadoraGeometrica.Forms
 {
     public partial class frmCalcular : Form
     {
-        public frmCalcular(int idForma)
+        int idForma;
+        char[] ch2 = new char[3]; // array de variáveis na fórmula
+
+        public frmCalcular(int idForm)
         {
             InitializeComponent();
             CarregaFormas();
+            idForma = idForm;
             cmbNomeForma.SelectedIndex = cmbNomeForma.FindString(idForma.ToString() + " - ");
-            CarregarFormulas(idForma);
+            CarregarFormulas(null, null);
         }
 
         public frmPrincipal refFormInicial { get; set; }
+
+        public void Parametros()
+        {
+            lblFormula.Text = "Selecione";
+            lblFormulaComNum.Text = "Selecione";
+            lblCalculo.Text = "Calcule";
+            txtVar1.Visible = false;
+            lbl1.Visible = false;
+            txtVar2.Visible = false;
+            lbl2.Visible = false;
+            txtVar3.Visible = false;
+            lbl3.Visible = false;
+        }
 
         public void CarregaFormas()
         {
@@ -31,17 +48,6 @@ namespace CalculadoraGeometrica.Forms
             while (sql_dr.Read())
             {
                 cmbNomeForma.Items.Add(sql_dr["id_forma"].ToString() + " - " + sql_dr["nome_forma"].ToString());
-            }
-            sql_dr.Close();
-        }
-
-        public void CarregarFormulas(int id)
-        {
-            clsFormula objFormula = new clsFormula();
-            MySqlDataReader sql_dr = objFormula.GetFormulasByIdForma(id);
-            while (sql_dr.Read())
-            {
-                cmbFormula.Items.Add(sql_dr["id_formula"].ToString() + " - " + sql_dr["nome_formula"].ToString());
             }
             sql_dr.Close();
         }
@@ -59,62 +65,81 @@ namespace CalculadoraGeometrica.Forms
 
         private void CarregaLbl(object sender, EventArgs e)
         {
+            txtVar1.Visible = false;
+            lbl1.Visible = false;
+            txtVar2.Visible = false;
+            lbl2.Visible = false;
+            txtVar3.Visible = false;
+            lbl3.Visible = false;
+
             clsFormula objFormula = new clsFormula();
             MySqlDataReader sql_dr = objFormula.GetFormulaById(Convert.ToInt32(cmbFormula.SelectedItem.ToString().Split('-')[0].Trim()));
             if (sql_dr.Read())
             {
                 lblFormula.Text = sql_dr["formula"].ToString();
 
-                /*if (lblFormula.Text.Contains("A"))
+                char[] ch = new char[lblFormula.Text.Length];
+
+                for (int i = 0; i < lblFormula.Text.Length; i++) // carrega a string da fórmula em um array de char
                 {
-                    txtVarA.Visible = true;
-                    lblA.Visible = true;
+                    ch[i] = lblFormula.Text[i];
                 }
-                else
+
+                int quantasVar = 0; // número de variáveis na fórmula
+                foreach (char c in ch)
                 {
-                    txtVarA.Visible = false;
-                    lblA.Visible = false;
+                    if (Char.IsLetter(c))
+                    {
+                        bool existe = false;
+                        foreach (char c2 in ch2)
+                        {
+                            if (c2.Equals(c)) // se caso a letra já existir no array
+                                existe = true;
+                        }
+                        if (!existe)
+                        {
+                            ch2[quantasVar] = c;
+                            quantasVar++;
+                        }
+                    }
                 }
-                if (lblFormula.Text.Contains("B"))
+
+                if (quantasVar >= 3)
                 {
-                    txtVarB.Visible = true;
-                    lblB.Visible = true;
+                    txtVar3.Visible = true;
+                    lbl3.Visible = true;
+                    txtVar2.Visible = true;
+                    lbl2.Visible = true;
+                    txtVar1.Visible = true;
+                    lbl1.Visible = true;
                 }
-                else
+                else if (quantasVar >= 2)
                 {
-                    txtVarB.Visible = false;
-                    lblB.Visible = false;
+                    txtVar2.Visible = true;
+                    lbl2.Visible = true;
+                    txtVar1.Visible = true;
+                    lbl1.Visible = true;
                 }
-                if (lblFormula.Text.Contains("C"))
+                else if (quantasVar >= 1)
                 {
-                    txtVarC.Visible = true;
-                    lblC.Visible = true;
+                    txtVar1.Visible = true;
+                    lbl1.Visible = true;
                 }
-                else
-                {
-                    txtVarC.Visible = false;
-                    lblC.Visible = false;
-                }
-                if (lblFormula.Text.Contains("D"))
-                {
-                    txtVarD.Visible = true;
-                    lblD.Visible = true;
-                }
-                else
-                {
-                    txtVarD.Visible = false;
-                    lblD.Visible = false;
-                }
-                if (lblFormula.Text.Contains("E"))
-                {
-                    txtVarE.Visible = true;
-                    lblE.Visible = true;
-                }
-                else
-                {
-                    txtVarE.Visible = false;
-                    lblE.Visible = false;
-                }*/
+
+            }
+            sql_dr.Close();
+        }
+
+        private void CarregarFormulas(object sender, EventArgs e)
+        {
+            Parametros();
+            idForma = Convert.ToInt32(cmbNomeForma.SelectedItem.ToString().Split('-')[0].Trim());
+            cmbFormula.Items.Clear();
+            clsFormula objFormula = new clsFormula();
+            MySqlDataReader sql_dr = objFormula.GetFormulasByIdForma(idForma);
+            while (sql_dr.Read())
+            {
+                cmbFormula.Items.Add(sql_dr["id_formula"].ToString() + " - " + sql_dr["nome_formula"].ToString());
             }
             sql_dr.Close();
         }
