@@ -43,5 +43,22 @@ namespace CalculadoraGeometrica.Classes
             MySqlDataReader sql_dr = instancia_cnx.selecionar(sql_cmd);
             return sql_dr;
         }
+
+        public void InsertFormula(string nomeFormula, string formula, string idForma)
+        {
+            connectionClass instancia_insert = new connectionClass();
+            MySqlCommand sql_cmd = new MySqlCommand();
+
+            sql_cmd.CommandType = CommandType.Text;
+            string sql_query = "INSERT INTO tb_formula (nome_formula, formula, id_forma) VALUES "
+                + " ( @nomeFormula, @formula, @idForma)";
+            sql_cmd.CommandText = sql_query;
+            sql_cmd.Parameters.Add("@nomeFormula", MySqlDbType.String).Value = nomeFormula;
+            sql_cmd.Parameters.Add("@formula", MySqlDbType.String).Value = nomeFormula;
+            sql_cmd.Parameters.Add("@idForma", MySqlDbType.Int32).Value = idForma;
+            
+            instancia_insert.CRUD(sql_cmd);
+        }
+
     }
 }

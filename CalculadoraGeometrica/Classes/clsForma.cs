@@ -45,21 +45,20 @@ namespace CalculadoraGeometrica.Classes
             return sql_dr;
         }
 
-        public void InsertFormas(string nomeFormula,Byte[] imagemFormula = null)
+        public void InsertFormas(string nomeForma,Byte[] imagemForma = null)
         {
             connectionClass instancia_insert = new connectionClass();
             MySqlCommand sql_cmd = new MySqlCommand();
 
             sql_cmd.CommandType = CommandType.Text;
             string sql_query = "INSERT INTO tb_forma (nome_forma, imagem_forma) VALUES "
-                + "(@nomeFormula" + ((imagemFormula != null) ? "@imagemFormula);" : ");") ;
+                + "(@nomeFormula" + ((imagemForma != null) ? "@imagemFormula);" : ");");
             sql_cmd.CommandText = sql_query;
-            sql_cmd.Parameters.Add("@nomeFormula", MySqlDbType.String).Value = nomeFormula;
-            if (imagemFormula != null)
+            sql_cmd.Parameters.Add("@nomeFormula", MySqlDbType.String).Value = nomeForma;
+            if (imagemForma != null)
             {
-                sql_cmd.Parameters.Add("@imagemFormula", MySqlDbType.Blob).Value = imagemFormula;
+                sql_cmd.Parameters.Add("@imagemFormula", MySqlDbType.Blob).Value = imagemForma;
             }
-
             instancia_insert.CRUD(sql_cmd);
         }
     }
