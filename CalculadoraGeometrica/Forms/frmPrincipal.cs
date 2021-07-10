@@ -57,5 +57,24 @@ namespace CalculadoraGeometrica.Forms
             this.Hide();
             adicionar.Show();
         }
+
+        private void CarregarImagemForma(object sender, EventArgs e)
+        {
+            if (cmbForma.Text != null)
+            {
+                clsForma objForma = new clsForma();
+                int idF = Convert.ToInt32(cmbForma.SelectedItem.ToString().Split('-')[0].Trim());
+                MySqlDataReader sql_dr = objForma.GetFormaFromID(idF);
+
+                while (sql_dr.Read())
+                {
+                    if (sql_dr["imagem_forma"].ToString() != "")
+                    {
+                        //TO BE SOLVED...
+                        //picImage.Image = objForma.convertByteToImage(Encoding.ASCII.GetBytes(sql_dr["imagem_forma"].ToString()));
+                    }
+                }
+            }
+        }
     }
 }

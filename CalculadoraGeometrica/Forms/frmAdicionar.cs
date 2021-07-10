@@ -23,14 +23,15 @@ namespace CalculadoraGeometrica.Forms
             inicializar();
         }
 
-        public frmPrincipal refFormInicial { get; set; }
+        
+        #region Tratamentos de inicialização do form
 
         public void inicializar()
         {
             txtNomeNovaForma.Text = "";
             cmbNomeForma.Enabled = false;
             rdbNao.Checked = true;
-            cmbNumVar.SelectedItem = null;
+            cmbNumVar.Text = "";
             txtVar1.Text = "";
             txtVar1.Enabled = false;
             txtVar2.Text = "";
@@ -44,8 +45,8 @@ namespace CalculadoraGeometrica.Forms
             btnVar2.Enabled = false;
             btnVar3.Text = "";
             btnVar3.Enabled = false;
-            cmbFormulas.SelectedItem = null;
-            cmbNomeForma.SelectedItem = null;
+            cmbFormulas.Text = "";
+            cmbNomeForma.Text = "";
         }
 
         public void CarregaFormas()
@@ -54,16 +55,19 @@ namespace CalculadoraGeometrica.Forms
             MySqlDataReader sql_dr = objForma.GetAllFormas();
             while (sql_dr.Read())
             {
-                cmbNomeForma.Items.Add(sql_dr["nome_forma"].ToString());
+                ComboboxItem item = new ComboboxItem();
+                item.Text = sql_dr["nome_forma"].ToString();
+                item.Value = sql_dr["id_forma"].ToString();
+                cmbNomeForma.Items.Add(item);
             }
             sql_dr.Close();
         }
 
         public void validarCampos()
         {
-            if (txtNomeNovaForma.Text == "" || txtVar1.Text == "" ||
-                txtFormula.Text == "" || cmbFormulas.SelectedItem != null ||
-                cmbNumVar.SelectedItem != null)
+            if ((txtNomeNovaForma.Text == "" && cmbFormulas.Text == "") || txtVar1.Text == "" ||
+                txtFormula.Text == "" || cmbFormulas.SelectedItem == null ||
+                cmbNumVar.SelectedItem == null)
             {
                 validação = false;
             }
@@ -73,10 +77,16 @@ namespace CalculadoraGeometrica.Forms
             }
         }
 
+        #endregion
+
+        public frmPrincipal refFormInicial { get; set; }
+
         private void fechar(object sender, FormClosingEventArgs e)
         {
             refFormInicial.Close();
         }
+
+        #region Tratamentos de click
 
         private void btnBuscarImagem_Click(object sender, EventArgs e)
         {
@@ -186,19 +196,23 @@ namespace CalculadoraGeometrica.Forms
                 btnVar3.Enabled = false;
             }
         }
+        #endregion
 
         private void btnInserirFormula_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 validarCampos();
 
                 if (validação)
                 {
                     if (liberado)
                     {
+
+                        if (inserirFormula())
+                        {
+                            MessageBox.Show("Cadastrado com sucesso");
+                        }
                         
-                        MessageBox.Show("Cadastrado com sucesso");
                         inicializar();
                     }
                     else
@@ -212,25 +226,67 @@ namespace CalculadoraGeometrica.Forms
                 {
                     MessageBox.Show("Erro, preencha os campos corretamente");
                 }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Erro fatal\n" + ex.Message);
-            }
+            
+            
         }
-
-        private void validar(object sender, KeyPressEventArgs e)
+        
+        private Boolean inserirFormula()
         {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            Boolean Result = false;
+            try
             {
-                e.Handled = false;
+                clsForma classForma = new clsForma();
+                clsFormula classFormula = new clsFormula();
+                clsVariavel classVariavel = new clsVariavel();
+                int idForma = 0;
+                if (rdbNao.Checked)
+                {
+                    byte[] imagemBytes;
+
+                    if (picFotoForma.Image != null)
+                    {
+                        imagemBytes = classForma.convertImageToByte(picFotoForma.Image);
+                    }
+                    else
+                    {
+                        imagemBytes = null;
+                    }
+                    idForma = classForma.InsertFormas(txtNomeNovaForma.Text, imagemBytes);
+                }
+                else
+                {
+                    idForma = int.Parse((cmbNomeForma.SelectedItem as ComboboxItem).Value.ToString());
+                }
+                classFormula.InsertFormula(cmbFormulas.Text, txtFormula.Text, idForma.ToString());
+
+                if (cmbNumVar.Text == "3")
+                {
+                    classVariavel.InsertVariavel(txtVar1.Text, idForma.ToString());
+                    classVariavel.InsertVariavel(txtVar2.Text, idForma.ToString());
+                    classVariavel.InsertVariavel(txtVar3.Text, idForma.ToString());
+                }
+                else if (cmbNumVar.Text == "2")
+                {
+                    classVariavel.InsertVariavel(txtVar1.Text, idForma.ToString());
+                    classVariavel.InsertVariavel(txtVar2.Text, idForma.ToString());
+                }
+                else if (cmbNumVar.Text == "1")
+                {
+                    classVariavel.InsertVariavel(txtVar1.Text, idForma.ToString());
+                }
+                Result = true;
             }
-            else
+            catch (Exception ex)
             {
-                e.Handled = true;
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Result = false;
             }
+            
+            return Result;
+            
         }
 
+        
         private void validarTxt(object sender, EventArgs e)
         {
             if(cmbNumVar.SelectedItem.ToString() == "1") {
@@ -263,22 +319,51 @@ namespace CalculadoraGeometrica.Forms
         {
             if (rdbNao.Checked)
             {
+                picFotoForma.Image = null;
                 txtNomeNovaForma.Enabled = true;
                 cmbNomeForma.Enabled = false;
             }
             else
             {
+                picFotoForma.Image = null;
                 txtNomeNovaForma.Enabled = false;
                 cmbNomeForma.Enabled = true;
             }
         }
 
-        private void vardois(object sender, KeyPressEventArgs e)
+        private void ValidarVarPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void BloquearKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void validar(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CarregarFotoForma(object sender, EventArgs e)
         {
 
         }
-
-
 
     }
 }

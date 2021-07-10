@@ -107,9 +107,11 @@
             this.cmbNomeForma.Name = "cmbNomeForma";
             this.cmbNomeForma.Size = new System.Drawing.Size(233, 24);
             this.cmbNomeForma.TabIndex = 4;
+            this.cmbNomeForma.SelectedValueChanged += new System.EventHandler(this.CarregarFotoForma);
             // 
             // picFotoForma
             // 
+            this.picFotoForma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picFotoForma.Location = new System.Drawing.Point(259, 34);
             this.picFotoForma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picFotoForma.Name = "picFotoForma";
@@ -424,6 +426,7 @@
             this.cmbNumVar.Size = new System.Drawing.Size(233, 24);
             this.cmbNumVar.TabIndex = 4;
             this.cmbNumVar.SelectedValueChanged += new System.EventHandler(this.validarTxt);
+            this.cmbNumVar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BloquearKeyPress);
             // 
             // txtVar3
             // 
@@ -433,6 +436,7 @@
             this.txtVar3.Size = new System.Drawing.Size(233, 22);
             this.txtVar3.TabIndex = 3;
             this.txtVar3.TextChanged += new System.EventHandler(this.vartres);
+            this.txtVar3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarVarPress);
             // 
             // txtVar2
             // 
@@ -442,6 +446,7 @@
             this.txtVar2.Size = new System.Drawing.Size(233, 22);
             this.txtVar2.TabIndex = 2;
             this.txtVar2.TextChanged += new System.EventHandler(this.vardois);
+            this.txtVar2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarVarPress);
             // 
             // txtVar1
             // 
@@ -451,6 +456,7 @@
             this.txtVar1.Size = new System.Drawing.Size(233, 22);
             this.txtVar1.TabIndex = 1;
             this.txtVar1.TextChanged += new System.EventHandler(this.varum);
+            this.txtVar1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidarVarPress);
             // 
             // label3
             // 

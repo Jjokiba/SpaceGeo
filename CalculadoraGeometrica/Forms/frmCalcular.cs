@@ -144,5 +144,6 @@ namespace CalculadoraGeometrica.Forms
             }
             sql_dr.Close();
         }
+
     }
 }
