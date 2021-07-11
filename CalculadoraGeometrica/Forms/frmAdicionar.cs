@@ -23,7 +23,6 @@ namespace CalculadoraGeometrica.Forms
             inicializar();
         }
 
-        
         #region Tratamentos de inicialização do form
 
         public void inicializar()
@@ -78,8 +77,9 @@ namespace CalculadoraGeometrica.Forms
         }
 
         #endregion
-
         public frmPrincipal refFormInicial { get; set; }
+
+        public frmCalcular refFormEdit { get; set; }
 
         private void fechar(object sender, FormClosingEventArgs e)
         {
@@ -286,7 +286,6 @@ namespace CalculadoraGeometrica.Forms
             
         }
 
-        
         private void validarTxt(object sender, EventArgs e)
         {
             if(cmbNumVar.SelectedItem.ToString() == "1") {

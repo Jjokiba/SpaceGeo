@@ -145,5 +145,15 @@ namespace CalculadoraGeometrica.Forms
             sql_dr.Close();
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmAdicionar edit = new frmAdicionar();
+            edit.refFormEdit = this;
+
+            this.Hide();
+            edit.Show();
+
+        }
+
     }
 }
