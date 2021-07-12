@@ -80,9 +80,9 @@ namespace CalculadoraGeometrica.Classes
 
             string sql_query = "UPDATE tb_formula SET formula = '@formula' WHERE id_forma = @id AND nome_formula like '@nomeFormula'";
             sql_cmd.CommandText = sql_query;
-            sql_cmd.Parameters.Add("@formula", MySqlDbType.String).Value = formula;
-            sql_cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idForma;
-            sql_cmd.Parameters.Add("@nomeFormula", MySqlDbType.String).Value = nomeFormula;
+            sql_cmd.Parameters.AddWithValue("@formula", formula);
+            sql_cmd.Parameters.AddWithValue("@id", idForma);
+            sql_cmd.Parameters.AddWithValue("@nomeFormula", nomeFormula);
 
             instancia_update.CRUD(sql_cmd);
         }

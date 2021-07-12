@@ -305,7 +305,8 @@ namespace CalculadoraGeometrica.Forms
                     if (liberado)
                     {
                         editarFormula(cmbFormulas.Text, txtFormula.Text);
-                        MessageBox.Show("Editada com sucesso");
+
+                        MessageBox.Show("Editado");
 
                         inicializar();
                     }
