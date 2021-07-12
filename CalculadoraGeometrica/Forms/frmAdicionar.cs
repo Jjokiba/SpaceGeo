@@ -15,9 +15,13 @@ namespace CalculadoraGeometrica.Forms
     public partial class frmAdicionar : Form
     {
         public bool liberado = true, validação = false;
+        int idForma;
+        int op;
 
-        public frmAdicionar()
+        public frmAdicionar(int idForm = -1, int ope = 0)
         {
+            op = ope;
+            idForma = idForm;
             InitializeComponent();
             CarregaFormas();
             inicializar();
@@ -27,25 +31,83 @@ namespace CalculadoraGeometrica.Forms
 
         public void inicializar()
         {
-            txtNomeNovaForma.Text = "";
-            cmbNomeForma.Enabled = false;
-            rdbNao.Checked = true;
-            cmbNumVar.Text = "";
+            if (op == 0)
+            {
+                txtNomeNovaForma.Text = "";
+                cmbNomeForma.Enabled = false;
+                rdbNao.Checked = true;
+                cmbNumVar.Text = "";
+                txtVar1.Text = "";
+                txtVar1.Enabled = false;
+                txtVar2.Text = "";
+                txtVar2.Enabled = false;
+                txtVar3.Text = "";
+                txtVar3.Enabled = false;
+                txtFormula.Text = "";
+                btnVar1.Text = "";
+                btnVar1.Enabled = false;
+                btnVar2.Text = "";
+                btnVar2.Enabled = false;
+                btnVar3.Text = "";
+                btnVar3.Enabled = false;
+                cmbFormulas.Text = "";
+                cmbNomeForma.Text = "";
+            }
+            else
+            {
+                rdbSim.Checked = true;
+                cmbNomeForma.SelectedIndex = idForma - 1;
+                preencherVariaveis();
+            }
+        }
+
+        public void preencherVariaveis()
+        {
             txtVar1.Text = "";
             txtVar1.Enabled = false;
             txtVar2.Text = "";
             txtVar2.Enabled = false;
             txtVar3.Text = "";
             txtVar3.Enabled = false;
-            txtFormula.Text = "";
-            btnVar1.Text = "";
-            btnVar1.Enabled = false;
-            btnVar2.Text = "";
-            btnVar2.Enabled = false;
-            btnVar3.Text = "";
-            btnVar3.Enabled = false;
-            cmbFormulas.Text = "";
-            cmbNomeForma.Text = "";
+
+            char[] var = new char[3];
+            int i = 0;
+
+            clsVariavel objVar = new clsVariavel();
+            MySqlDataReader dr = objVar.GetVarByIdForma(idForma);
+
+            while (dr.Read())
+            {
+                var[i] = char.Parse(dr["char_variavel"].ToString());
+
+                i++;
+            }
+            dr.Close();
+
+            if (i == 1) 
+            {
+                cmbNumVar.SelectedIndex = 0;
+                txtVar1.Text = var[0].ToString();
+                txtVar1.Enabled = true;
+            }
+            else if (i == 2) 
+            {
+                cmbNumVar.SelectedIndex = 1;
+                txtVar1.Text = var[0].ToString();
+                txtVar1.Enabled = true;
+                txtVar2.Text = var[1].ToString();
+                txtVar2.Enabled = true;
+            }
+            else if (i == 3)
+            {
+                cmbNumVar.SelectedIndex = 2;
+                txtVar1.Text = var[0].ToString();
+                txtVar1.Enabled = true;
+                txtVar2.Text = var[1].ToString();
+                txtVar2.Enabled = true;
+                txtVar3.Text = var[2].ToString();
+                txtVar3.Enabled = true;
+            }
         }
 
         public void CarregaFormas()
@@ -83,7 +145,14 @@ namespace CalculadoraGeometrica.Forms
 
         private void fechar(object sender, FormClosingEventArgs e)
         {
-            refFormInicial.Close();
+            if (op == 0)
+            {
+                refFormInicial.Close();
+            }
+            else
+            {
+                refFormEdit.Close();
+            }
         }
 
         #region Tratamentos de click
@@ -101,8 +170,16 @@ namespace CalculadoraGeometrica.Forms
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            refFormInicial.Show();
+            if (op == 0)
+            {
+                this.Hide();
+                refFormInicial.Show();
+            }
+            else
+            {
+                this.Hide();
+                refFormEdit.Show();
+            }
         }
 
         private void btnMenos_Click(object sender, EventArgs e)
@@ -200,10 +277,11 @@ namespace CalculadoraGeometrica.Forms
 
         private void btnInserirFormula_Click(object sender, EventArgs e)
         {
-            
-                validarCampos();
+            validarCampos();
 
-                if (validação)
+            if (validação)
+            {
+                if (op == 0)
                 {
                     if (liberado)
                     {
@@ -212,7 +290,7 @@ namespace CalculadoraGeometrica.Forms
                         {
                             MessageBox.Show("Cadastrado com sucesso");
                         }
-                        
+
                         inicializar();
                     }
                     else
@@ -224,8 +302,25 @@ namespace CalculadoraGeometrica.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Erro, preencha os campos corretamente");
+                    if (liberado)
+                    {
+                        editarFormula(cmbFormulas.Text, txtFormula.Text);
+                        MessageBox.Show("Editada com sucesso");
+
+                        inicializar();
+                    }
+                    else
+                    {
+                        validação = false;
+                        MessageBox.Show("Corrija a fórmula! Parenteses faltando ou colocados em excesso");
+                        txtFormula.Focus();
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Erro, preencha os campos corretamente");
+            }
             
             
         }
@@ -284,6 +379,20 @@ namespace CalculadoraGeometrica.Forms
             
             return Result;
             
+        }
+
+        private void editarFormula(string operacao, string formula)
+        {
+            clsFormula objFormula = new clsFormula();
+
+            try
+            {
+                objFormula.UpdateFormula(operacao, formula, idForma);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void validarTxt(object sender, EventArgs e)
@@ -362,6 +471,26 @@ namespace CalculadoraGeometrica.Forms
         private void CarregarFotoForma(object sender, EventArgs e)
         {
 
+        }
+
+        private void carregaFormula(object sender, EventArgs e)
+        {
+            if (rdbSim.Checked == true)
+            {
+                string operacao = cmbFormulas.SelectedItem.ToString();
+
+                clsFormula objFormula = new clsFormula();
+                MySqlDataReader dr = objFormula.GetFormulaByOperacao(idForma, operacao);
+
+                if (dr.Read())
+                {
+                    txtFormula.Text = dr["formula"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("erro");
+                }
+            }
         }
 
     }

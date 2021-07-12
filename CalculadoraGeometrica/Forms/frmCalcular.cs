@@ -147,7 +147,7 @@ namespace CalculadoraGeometrica.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            frmAdicionar edit = new frmAdicionar();
+            frmAdicionar edit = new frmAdicionar(idForma, 1);
             edit.refFormEdit = this;
 
             this.Hide();

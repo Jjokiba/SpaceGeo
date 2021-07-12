@@ -33,6 +33,17 @@ namespace CalculadoraGeometrica.Classes
             return sql_dr;
         }
 
+        public MySqlDataReader GetFormulaByOperacao(int id, string operacao)
+        {
+            connectionClass instancia_cnx = new connectionClass();
+            MySqlCommand sql_cmd = new MySqlCommand();
+            sql_cmd.CommandType = CommandType.Text;
+            string sql_query = "SELECT formula FROM tb_formula WHERE id_forma = " + id + " AND nome_formula LIKE '" + operacao + "'";
+            sql_cmd.CommandText = sql_query;
+            MySqlDataReader sql_dr = instancia_cnx.selecionar(sql_cmd);
+            return sql_dr;
+        }
+
         public MySqlDataReader GetFormulaById(int id)
         {
             connectionClass instancia_cnx = new connectionClass();
@@ -58,6 +69,22 @@ namespace CalculadoraGeometrica.Classes
             sql_cmd.Parameters.Add("@idForma", MySqlDbType.Int32).Value = idForma;
             
             instancia_insert.CRUD(sql_cmd);
+        }
+
+        public void UpdateFormula(string nomeFormula, string formula, int idForma)
+        {
+            connectionClass instancia_update = new connectionClass();
+            
+            MySqlCommand sql_cmd = new MySqlCommand();
+            sql_cmd.CommandType = CommandType.Text;
+
+            string sql_query = "UPDATE tb_formula SET formula = '@formula' WHERE id_forma = @id AND nome_formula like '@nomeFormula'";
+            sql_cmd.CommandText = sql_query;
+            sql_cmd.Parameters.Add("@formula", MySqlDbType.String).Value = formula;
+            sql_cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = idForma;
+            sql_cmd.Parameters.Add("@nomeFormula", MySqlDbType.String).Value = nomeFormula;
+
+            instancia_update.CRUD(sql_cmd);
         }
 
     }

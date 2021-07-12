@@ -215,7 +215,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 38);
             this.btnEdit.TabIndex = 23;
-            this.btnEdit.Text = "Editar Formula(*)";
+            this.btnEdit.Text = "Editar Formulas(*)";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 

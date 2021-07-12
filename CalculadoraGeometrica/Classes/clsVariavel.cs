@@ -24,5 +24,19 @@ namespace CalculadoraGeometrica.Classes
 
             instancia_insert.CRUD(sql_cmd);
         }
+
+        public MySqlDataReader GetVarByIdForma(int id)
+        {
+            connectionClass instancia_cnx = new connectionClass();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandType = CommandType.Text;
+
+            string query = "SELECT char_variavel FROM tb_variavel WHERE id_forma = " + id;
+            cmd.CommandText = query;
+
+            MySqlDataReader dr = instancia_cnx.selecionar(cmd);
+
+            return dr;
+        }
     }
 }
