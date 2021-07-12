@@ -376,6 +376,7 @@
             this.txtFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFormula.Location = new System.Drawing.Point(274, 107);
             this.txtFormula.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFormula.MaxLength = 30;
             this.txtFormula.Name = "txtFormula";
             this.txtFormula.Size = new System.Drawing.Size(246, 22);
             this.txtFormula.TabIndex = 9;
