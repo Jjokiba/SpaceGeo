@@ -17,7 +17,7 @@ namespace CalculadoraGeometrica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCalcular(1));
+            Application.Run(new frmPrincipal());
         }
     }
 }

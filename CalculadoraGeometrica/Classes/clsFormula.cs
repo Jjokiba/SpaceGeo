@@ -71,18 +71,15 @@ namespace CalculadoraGeometrica.Classes
             instancia_insert.CRUD(sql_cmd);
         }
 
-        public void UpdateFormula(string nomeFormula, string formula, int idForma)
+        public void UpdateFormula(string formula, int idForma, string nomeFormula)
         {
             connectionClass instancia_update = new connectionClass();
             
             MySqlCommand sql_cmd = new MySqlCommand();
             sql_cmd.CommandType = CommandType.Text;
 
-            string sql_query = "UPDATE tb_formula SET formula = '@formula' WHERE id_forma = @id AND nome_formula like '@nomeFormula'";
+            string sql_query = "UPDATE tb_formula SET formula = '" +formula+ "' WHERE id_forma = "+ idForma +" AND nome_formula like '"+ nomeFormula +"'";
             sql_cmd.CommandText = sql_query;
-            sql_cmd.Parameters.AddWithValue("@formula", formula);
-            sql_cmd.Parameters.AddWithValue("@id", idForma);
-            sql_cmd.Parameters.AddWithValue("@nomeFormula", nomeFormula);
 
             instancia_update.CRUD(sql_cmd);
         }

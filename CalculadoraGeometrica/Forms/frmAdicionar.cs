@@ -304,9 +304,10 @@ namespace CalculadoraGeometrica.Forms
                 {
                     if (liberado)
                     {
-                        editarFormula(cmbFormulas.Text, txtFormula.Text);
-
-                        MessageBox.Show("Editado");
+                        if (editarFormula(cmbFormulas.Text, txtFormula.Text))
+                        {
+                            MessageBox.Show("Editado", "Sucesso");
+                        }
 
                         inicializar();
                     }
@@ -382,17 +383,22 @@ namespace CalculadoraGeometrica.Forms
             
         }
 
-        private void editarFormula(string operacao, string formula)
+        private Boolean editarFormula(string operacao, string formula)
         {
             clsFormula objFormula = new clsFormula();
 
             try
             {
-                objFormula.UpdateFormula(operacao, formula, idForma);
+                objFormula.UpdateFormula(formula, idForma, operacao);
+                
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return false;
+
             }
         }
 
