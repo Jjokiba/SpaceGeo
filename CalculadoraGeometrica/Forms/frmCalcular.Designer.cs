@@ -178,6 +178,7 @@
             this.txtVar3.Size = new System.Drawing.Size(176, 20);
             this.txtVar3.TabIndex = 27;
             this.txtVar3.Visible = false;
+            this.txtVar3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVar3_KeyPress);
             // 
             // txtVar2
             // 
@@ -187,6 +188,7 @@
             this.txtVar2.Size = new System.Drawing.Size(176, 20);
             this.txtVar2.TabIndex = 26;
             this.txtVar2.Visible = false;
+            this.txtVar2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVar2_KeyPress);
             // 
             // txtVar1
             // 
@@ -196,6 +198,7 @@
             this.txtVar1.Size = new System.Drawing.Size(176, 20);
             this.txtVar1.TabIndex = 25;
             this.txtVar1.Visible = false;
+            this.txtVar1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVar1_KeyPress);
             // 
             // lbl1
             // 

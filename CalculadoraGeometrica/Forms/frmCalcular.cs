@@ -171,7 +171,7 @@ namespace CalculadoraGeometrica.Forms
                 }
                 catch (Exception ex)
                 {
-                    //ex.StackTrace;
+                    Console.WriteLine(ex);
                 }
                 lblCalculo.Text = calculo;
             }
@@ -229,6 +229,63 @@ namespace CalculadoraGeometrica.Forms
                 }
             }
             return ok;
+        }
+
+        private void txtVar1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (!txtVar1.Text.ToString().Contains(",") && e.KeyChar == ',')
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtVar2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (!txtVar2.Text.ToString().Contains(",") && e.KeyChar == ',')
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtVar3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (!txtVar3.Text.ToString().Contains(",") && e.KeyChar == ',')
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }
