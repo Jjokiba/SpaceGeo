@@ -152,3 +152,39 @@ D:\Projects\SpaceGeo Faculdade\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.M
 D:\Projects\SpaceGeo Faculdade\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Numerics.Vectors.xml
 D:\Projects\SpaceGeo Faculdade\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Projects\SpaceGeo Faculdade\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csproj.CopyComplete
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.exe.config
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.exe
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\CalculadoraGeometrica.pdb
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\Google.Protobuf.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\MySql.Data.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Buffers.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Memory.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\Zstandard.Net.dll
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\Google.Protobuf.pdb
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\Google.Protobuf.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\MySql.Data.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Buffers.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Memory.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csprojAssemblyReference.cache
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.Forms.frmAdicionar.resources
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.Forms.frmCalcular.resources
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.Forms.frmPrincipal.resources
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.Properties.Resources.resources
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csproj.GenerateResource.cache
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csproj.CoreCompileInputs.cache
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.csproj.CopyComplete
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.exe
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.pdb
+C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\Flee.Net45.dll

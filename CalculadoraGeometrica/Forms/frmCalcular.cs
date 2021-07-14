@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CalculadoraGeometrica.Classes;
+using Flee.PublicTypes;
 
 namespace CalculadoraGeometrica.Forms
 {
@@ -155,5 +156,79 @@ namespace CalculadoraGeometrica.Forms
 
         }
 
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            if (checkCampos())
+            {
+                substituiCalculo(lblFormula.Text.ToString().Trim());
+                String calculo = lblFormulaComNum.Text.ToString().Trim();
+                try
+                {
+                    ExpressionContext context = new ExpressionContext();
+                    context.Imports.AddType(typeof(Math));
+                    IGenericExpression<double> eGeneric = context.CompileGeneric<double>(calculo);
+                    calculo = eGeneric.Evaluate().ToString();
+                }
+                catch (Exception ex)
+                {
+                    //ex.StackTrace;
+                }
+                lblCalculo.Text = calculo;
+            }
+        }
+
+        private void substituiCalculo(String cal)
+        {
+            String calculo = cal;
+            if (txtVar1.Visible && txtVar1.Text.ToString() != "")
+            {
+                calculo = calculo.Replace(ch2[0].ToString(), txtVar1.Text.ToString());
+                if (txtVar2.Visible)
+                {
+                    if (txtVar2.Text.ToString() != "")
+                    {
+                        calculo = calculo.Replace(ch2[1].ToString(), txtVar2.Text.ToString());
+                        if (txtVar3.Visible)
+                        {
+                            if (txtVar3.Text.ToString() != "")
+                            {
+                                calculo = calculo.Replace(ch2[2].ToString(), txtVar3.Text.ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            lblFormulaComNum.Text = calculo;
+        }
+
+        private bool checkCampos()
+        {
+            bool ok = false;
+            if (txtVar1.Visible && txtVar1.Text.ToString() != "")
+            {
+                if (txtVar2.Visible)
+                {
+                    if (txtVar2.Text.ToString() != "")
+                    {
+                        if (txtVar3.Visible)
+                        {
+                            if (txtVar3.Text.ToString() != "")
+                            {
+                                ok = true;
+                            }
+                        }
+                        else
+                        {
+                            ok = true;
+                        }
+                    }
+                }
+                else
+                {
+                    ok = true;
+                }
+            }
+            return ok;
+        }
     }
 }
