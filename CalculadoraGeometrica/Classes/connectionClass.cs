@@ -57,5 +57,13 @@ namespace CalculadoraGeometrica.Classes
             //desconectar();
             return sql_dr;
         }
+
+        public MySqlDataAdapter selecionarAdapter(MySqlCommand sql_cmd)
+        {
+            conectar();
+            sql_cmd.Connection = instancia_conexao;
+            MySqlDataAdapter sql_da = new MySqlDataAdapter(sql_cmd);
+            return sql_da;
+        }
     }
 }

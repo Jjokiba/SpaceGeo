@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace CalculadoraGeometrica.Classes
 {
@@ -17,22 +18,35 @@ namespace CalculadoraGeometrica.Classes
 
         public Byte[] convertImageToByte(Image imageForma)
         {
-            MemoryStream ms = new MemoryStream();
+            if (imageForma != null)
+            {
+                byte[] foto_array;
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    Bitmap bmp = new Bitmap(imageForma);
+                    bmp.Save(stream, ImageFormat.Jpeg);
+                    foto_array = stream.ToArray();
+                }
 
-            imageForma.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg); //Salvando imagem no memoryStream
-
-            Byte[] myData = new Byte[ms.Length];
-
-            myData = ms.ToArray();
-
-            return myData;
+                return (foto_array);
+            }
+            else
+            {
+                return (null);
+            }
         }
 
         public Image convertByteToImage(Byte[] byteImageForma)
         {
             MemoryStream ms = new MemoryStream(byteImageForma);
-            Image imageForma = Image.FromStream(ms);
-            return imageForma;
+            try
+            {
+                return Image.FromStream(ms);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
 
@@ -56,6 +70,18 @@ namespace CalculadoraGeometrica.Classes
             sql_cmd.CommandText = sql_query;
             sql_cmd.Parameters.Add("@idforma", MySqlDbType.Int32).Value = id;
             MySqlDataReader sql_dr = instancia_cnx.selecionar(sql_cmd);
+            return sql_dr;
+        }
+
+        public MySqlDataAdapter GetFormaByIDAdapter(int id)
+        {
+            connectionClass instancia_cnx = new connectionClass();
+            MySqlCommand sql_cmd = new MySqlCommand();
+            sql_cmd.CommandType = CommandType.Text;
+            string sql_query = "SELECT * FROM tb_forma WHERE id_forma = @idforma";
+            sql_cmd.CommandText = sql_query;
+            sql_cmd.Parameters.Add("@idforma", MySqlDbType.Int32).Value = id;
+            MySqlDataAdapter sql_dr = instancia_cnx.selecionarAdapter(sql_cmd);
             return sql_dr;
         }
 

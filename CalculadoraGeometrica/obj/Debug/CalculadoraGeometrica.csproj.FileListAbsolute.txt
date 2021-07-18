@@ -188,3 +188,4 @@ C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\Calculad
 C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.exe
 C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\obj\Debug\CalculadoraGeometrica.pdb
 C:\Users\danie\Desktop\Escola\ADS\2021\05 - EL1\2021-06\GitHub\SpaceGeo\CalculadoraGeometrica\bin\Debug\Flee.Net45.dll
+D:\Projects\SpaceGeo\CalculadoraGeometrica\bin\Debug\Flee.Net45.dll

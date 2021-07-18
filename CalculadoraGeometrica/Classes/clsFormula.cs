@@ -65,7 +65,7 @@ namespace CalculadoraGeometrica.Classes
                 + " ( @nomeFormula, @formula, @idForma)";
             sql_cmd.CommandText = sql_query;
             sql_cmd.Parameters.Add("@nomeFormula", MySqlDbType.String).Value = nomeFormula;
-            sql_cmd.Parameters.Add("@formula", MySqlDbType.String).Value = nomeFormula;
+            sql_cmd.Parameters.Add("@formula", MySqlDbType.String).Value = formula;
             sql_cmd.Parameters.Add("@idForma", MySqlDbType.Int32).Value = idForma;
             
             instancia_insert.CRUD(sql_cmd);

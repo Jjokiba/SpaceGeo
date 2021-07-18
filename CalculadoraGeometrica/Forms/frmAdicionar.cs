@@ -477,7 +477,29 @@ namespace CalculadoraGeometrica.Forms
 
         private void CarregarFotoForma(object sender, EventArgs e)
         {
+            if (cmbNomeForma.Text != null)
+            {
+                clsForma objForma = new clsForma();
+                int idF = int.Parse((cmbNomeForma.SelectedItem as ComboboxItem).Value.ToString());
+                MySqlDataReader sql_dr = objForma.GetFormaFromID(idF);
 
+                if (sql_dr.Read())
+                {
+                    picFotoForma.Image = null;
+                    MySqlDataAdapter sql_da = objForma.GetFormaByIDAdapter(idF);
+                    sql_da.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    DataSet ds = new DataSet();
+                    sql_da.Fill(ds, "tb_forma");
+                    DataTable table = new DataTable();
+                    sql_da.Fill(table);
+
+                    if (ds.Tables[0].Rows[0][2] != System.DBNull.Value)
+                    {
+                        picFotoForma.Image = objForma.convertByteToImage((byte[])ds.Tables[0].Rows[0][2]);
+                    }
+                    sql_da.Dispose();
+                }
+            }
         }
 
         private void carregaFormula(object sender, EventArgs e)

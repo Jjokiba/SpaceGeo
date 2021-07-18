@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CalculadoraGeometrica.Classes;
+using System.IO;
 
 namespace CalculadoraGeometrica.Forms
 {
@@ -17,11 +18,12 @@ namespace CalculadoraGeometrica.Forms
         public frmPrincipal()
         {
             InitializeComponent();
-            CarregaFormas();
+            //CarregaFormas();
         }
         
         public void CarregaFormas()
         {
+            cmbForma.Items.Clear();
             clsForma objForma = new clsForma();
             MySqlDataReader sql_dr = objForma.GetAllFormas();
 
@@ -66,15 +68,29 @@ namespace CalculadoraGeometrica.Forms
                 int idF = Convert.ToInt32(cmbForma.SelectedItem.ToString().Split('-')[0].Trim());
                 MySqlDataReader sql_dr = objForma.GetFormaFromID(idF);
 
-                while (sql_dr.Read())
+                if (sql_dr.Read())
                 {
-                    if (sql_dr["imagem_forma"].ToString() != "")
+                    picImage.Image = null;
+                    MySqlDataAdapter sql_da = objForma.GetFormaByIDAdapter(idF);
+                    sql_da.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    DataSet ds = new DataSet();
+                    sql_da.Fill(ds, "tb_forma");
+                    DataTable table = new DataTable();
+                    sql_da.Fill(table);
+
+                    if (ds.Tables[0].Rows[0][2] != System.DBNull.Value)
                     {
-                        //TO BE SOLVED...
-                        //picImage.Image = objForma.convertByteToImage(Encoding.ASCII.GetBytes(sql_dr["imagem_forma"].ToString()));
+                        picImage.Image = objForma.convertByteToImage((byte[])ds.Tables[0].Rows[0][2]);
                     }
+                    sql_da.Dispose();
+
                 }
             }
+        }
+
+        private void CarregarFormulas(object sender, EventArgs e)
+        {
+            CarregaFormas();
         }
     }
 }
