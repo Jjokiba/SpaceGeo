@@ -29,6 +29,7 @@ namespace CalculadoraGeometrica.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.label1 = new System.Windows.Forms.Label();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.cmbForma = new System.Windows.Forms.ComboBox();
@@ -41,7 +42,8 @@ namespace CalculadoraGeometrica.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 30);
+            this.label1.Location = new System.Drawing.Point(47, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 23);
             this.label1.TabIndex = 0;
@@ -49,10 +51,10 @@ namespace CalculadoraGeometrica.Forms
             // 
             // picImage
             // 
-            this.picImage.Location = new System.Drawing.Point(12, 84);
-            this.picImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picImage.Location = new System.Drawing.Point(9, 68);
+            this.picImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(348, 247);
+            this.picImage.Size = new System.Drawing.Size(261, 201);
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImage.TabIndex = 2;
             this.picImage.TabStop = false;
@@ -62,20 +64,20 @@ namespace CalculadoraGeometrica.Forms
             this.cmbForma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbForma.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbForma.FormattingEnabled = true;
-            this.cmbForma.Location = new System.Drawing.Point(107, 352);
-            this.cmbForma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbForma.Location = new System.Drawing.Point(51, 286);
+            this.cmbForma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbForma.Name = "cmbForma";
-            this.cmbForma.Size = new System.Drawing.Size(140, 31);
+            this.cmbForma.Size = new System.Drawing.Size(180, 31);
             this.cmbForma.TabIndex = 4;
             this.cmbForma.SelectedValueChanged += new System.EventHandler(this.CarregarImagemForma);
             // 
             // btnSelecionar
             // 
             this.btnSelecionar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionar.Location = new System.Drawing.Point(107, 395);
-            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSelecionar.Location = new System.Drawing.Point(51, 322);
+            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(140, 39);
+            this.btnSelecionar.Size = new System.Drawing.Size(180, 32);
             this.btnSelecionar.TabIndex = 5;
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = true;
@@ -84,10 +86,10 @@ namespace CalculadoraGeometrica.Forms
             // btnAdicionar
             // 
             this.btnAdicionar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(107, 440);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdicionar.Location = new System.Drawing.Point(51, 358);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(140, 57);
+            this.btnAdicionar.Size = new System.Drawing.Size(180, 46);
             this.btnAdicionar.TabIndex = 6;
             this.btnAdicionar.Text = "Adicionar Fórmulas";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -95,18 +97,19 @@ namespace CalculadoraGeometrica.Forms
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 508);
+            this.ClientSize = new System.Drawing.Size(278, 413);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.cmbForma);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(387, 547);
-            this.MinimumSize = new System.Drawing.Size(387, 547);
+            this.MaximumSize = new System.Drawing.Size(294, 452);
+            this.MinimumSize = new System.Drawing.Size(294, 452);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
